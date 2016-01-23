@@ -15,6 +15,9 @@ public class Follow : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Debug.Log(toFollow);
+        rb.velocity = Vector3.zero;
+        //rb.angularVelocity = Vector3.zero;
+        transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
         if (toFollow != null) {
             //Debug.Log("I've got you!");
             float step = speed * Time.deltaTime;

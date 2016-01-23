@@ -14,11 +14,13 @@ public class PlayerController : MonoBehaviour {
 	
 	void FixedUpdate()
     {
+        rb.velocity = Vector3.zero;
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
         Vector3 movement = new Vector3(speed * horizontal, 0, speed * vertical);
-        rb.AddForce(movement);
+        //rb.AddForce(movement);
+        transform.position = transform.position + movement*Time.deltaTime;
     }
 
     // Update is called once per frame
